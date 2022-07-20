@@ -35,13 +35,8 @@ public class LoginPage {
     }
 
 	public boolean estaNaPaginaDeLeiloes() {
-		this.esperaCarregarPaginaDeLeiloes();
+//		this.esperaCarregarPaginaDeLeiloes();
 		return this.driver.getCurrentUrl().endsWith("/leiloes");
-	}
-	
-	public void esperaCarregarPaginaDeLeiloes() {
-		WebDriverWait wait = new WebDriverWait(driver,2);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(),'Todos leilões')]")));
 	}
 
 	public boolean estaNaPaginaDeLoginComErro() {
