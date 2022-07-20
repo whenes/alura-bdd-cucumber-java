@@ -127,8 +127,14 @@ public class Leilao {
 		this.lances = lances;
 	}
 
+	public boolean eValido(Lance lance) {
+		return lance.getValor().compareTo(BigDecimal.ZERO) > 0;
+	}
+
 	public boolean propoe(Lance lanceAtual) {
-		
+		if (!eValido(lanceAtual)) {
+			return false;
+		}
 		if (this.estaSemLances() || ehUmLanceValido(lanceAtual)) {
 			adicionarLance(lanceAtual);
 			return true;
